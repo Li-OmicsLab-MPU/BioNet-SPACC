@@ -1,0 +1,30 @@
+data:
+  ppi_file: "data/PPI.tsv"
+  output_dir: "data"
+  cluster_dir: "results/cluster/"
+  final_cluster_dir: "results/cluster/"
+  results_dir4a: "results/4.validation/"
+  results_dir4b: "results/4.classification/"
+
+qc:
+  protein_missing_threshold: 0.20
+  ppi_score_threshold: 0.7
+
+split:
+  test_size: 0.20
+  random_state: 42
+
+netspacc:
+  k_range: [2, 3, 4]
+  s_range: [2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0]
+  lambda2_range: [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0, 1.1]
+  bootstrap_n: 100
+  pac_threshold: 0.15
+  random_seed: 42
+  consensus_method: 'subsample'
+  subsample_ratio: 0.8
+
+compute:
+  n_jobs: -1
+  use_gpu: true
+  gpu_devices: [0, 1]
